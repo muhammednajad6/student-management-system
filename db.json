@@ -1,0 +1,11 @@
+{
+  "students": [
+    {
+      "name": "NAJAD",
+      "email": "NAJAD@GMAIL.COM",
+      "course": "MEARN STACK",
+      "id": "p6xFMhjoDEg"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
