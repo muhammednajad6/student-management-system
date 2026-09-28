@@ -6,7 +6,7 @@ function StudentView() {
 
   const [student, setStudent] = useState(null);
 
-  const API = "http://localhost:3000/students";
+  const API = "https://student-management-system-hbvp.onrender.com/students";
 
   useEffect(() => {
     fetch(`${API}/${id}`)

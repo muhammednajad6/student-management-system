@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 function Dashboard() {
   const [students, setStudents] = useState([]);
 
-  const API = "http://localhost:3000/students";
+  const API =
+    "https://student-management-system-hbvp.onrender.com/students";
 
   useEffect(() => {
     fetch(API)
@@ -51,15 +52,15 @@ function Dashboard() {
           </p>
         </div>
 
-        {/* TOTAL STUDENTS BOX */}
-        <Link to="/students" className="count-card">
-
+        <Link
+          to="/students"
+          className="count-card"
+        >
           <h2>{students.length}</h2>
 
           <p>Total Students</p>
 
           <span>View Students →</span>
-
         </Link>
 
       </div>

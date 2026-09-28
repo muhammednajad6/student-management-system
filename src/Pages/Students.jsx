@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 function Students() {
   const [students, setStudents] = useState([]);
 
-  const API = "http://localhost:3000/students";
+  const API =
+    "https://student-management-system-hbvp.onrender.com/students";
 
   const getStudents = async () => {
     const response = await fetch(API);

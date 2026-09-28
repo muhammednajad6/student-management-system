@@ -8,7 +8,8 @@ function AddStudent() {
 
   const navigate = useNavigate();
 
-  const API = "http://localhost:3000/students";
+  const API =
+    "https://student-management-system-hbvp.onrender.com/students";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,15 +25,35 @@ function AddStudent() {
       course,
     };
 
-    await fetch(API, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(student),
-    });
+    try {
+      const response = await fetch(API, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(student),
+      });
 
-    navigate("/students");
+      const data = await response.json();
+
+      console.log(data);
+
+      if (!response.ok) {
+        alert("Failed to add student");
+        return;
+      }
+
+      alert("Student added successfully");
+
+      setName("");
+      setEmail("");
+      setCourse("");
+
+      navigate("/students");
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -40,9 +61,7 @@ function AddStudent() {
 
       <div className="form-box">
 
-        <div className="form-icon">
-          
-        </div>
+        <div className="form-icon"></div>
 
         <h1>Add Student</h1>
 

@@ -10,7 +10,7 @@ function EditStudent() {
   const [email, setEmail] = useState("");
   const [course, setCourse] = useState("");
 
-  const API = "http://localhost:3000/students";
+  const API =   "https://student-management-system-hbvp.onrender.com/students";
 
   useEffect(() => {
     fetch(`${API}/${id}`)
